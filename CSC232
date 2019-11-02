@@ -1,0 +1,75 @@
+import java.lang.*;
+/**
+ * 
+ * @author Helen Amaro and Sarah Shapard
+ *
+ */
+
+public class Item {
+
+
+	private String name;
+	private String type;
+	private String description;
+	
+	public Item(String name, String type, String description){
+		this.name = name;
+		this.type = type;
+		this.description = description;
+	}
+	
+	public String getName()
+	{
+		return name;
+	}
+	
+	public void setName(String name)
+	{
+		this.name = name;
+	}
+	
+	public String getType()
+	{
+		return type;
+	}
+	
+	public void setType(String type)
+	{
+		this.type = type;
+	}
+	
+	public String getDescription() 
+	{
+		return description;
+	}
+	
+	public void setDescription(String description)
+	{
+		this.description = description;
+	}
+	
+	@Override
+	public String toString()
+	{
+		String s = "Item:" + "\n" + "     Name: " + name 
+				+ "\n" + "     Type: " + type + "\n" + "     Description: " + description; 
+		
+		return s;
+	}
+	
+	public static void main(String[] args)
+	{
+		Item e1 = new Item("sandwich", "consumable", "a peanut butter and jelly sandwich");
+		System.out.println(e1.getName());
+		System.out.println(e1.getType());
+		System.out.println(e1.getDescription());
+		
+		Item e2 = new Item("sandwich", "consumable", "a peanut butter and jelly sandwich");
+		e2.setName("Money");
+		e2.setType("Currency");
+		e2.setDescription("$$$$$$$$");
+		System.out.println(e2);
+
+	}
+	
+}
