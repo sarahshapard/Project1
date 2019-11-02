@@ -57,19 +57,4 @@ public class Item {
 		return s;
 	}
 	
-	public static void main(String[] args)
-	{
-		Item e1 = new Item("sandwich", "consumable", "a peanut butter and jelly sandwich");
-		System.out.println(e1.getName());
-		System.out.println(e1.getType());
-		System.out.println(e1.getDescription());
-		
-		Item e2 = new Item("sandwich", "consumable", "a peanut butter and jelly sandwich");
-		e2.setName("Money");
-		e2.setType("Currency");
-		e2.setDescription("$$$$$$$$");
-		System.out.println(e2);
-
-	}
-	
 }
