@@ -1,0 +1,68 @@
+mport java.util.ArrayList;
+import java.lang.*;
+/**
+ * 
+ * @author Helen Amaro and Sarah Shapard
+ *
+ */
+
+public class Location {
+
+	private String name;
+	private String description;
+
+	ArrayList<Item> array1 = new ArrayList<Item>();
+	
+	public Location()
+	{
+		name = "";
+		description = "";
+	}
+	
+	public Location(String name, String description)
+	{
+		this.name = name;
+		this.description = description;
+	}
+	
+	public Location(String name, String description, Item obj)
+	{
+		this.name = name;
+		this.description = description;
+		array1.add(obj);
+	}
+	
+	public String getName()
+	{
+		return name;
+	}
+	
+	public void setName(String name)
+	{
+		this.name = name;
+	}
+	
+	public String getDescription()
+	{
+		return description;
+	}
+	
+	public void setDescription(String description)
+	{
+		this.description = description;
+	}
+	
+	public void addItem(Item obj)
+	{
+		array1.add(obj);
+	}
+	
+	public void itemPresent(Item obj)
+	{
+		for(Item temp : array1)
+		{
+			
+		}
+	}
+	
+}
