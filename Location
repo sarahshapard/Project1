@@ -1,7 +1,8 @@
-mport java.util.ArrayList;
-import java.lang.*;
+import java.util.ArrayList;
 /**
  * 
+ * The location class is used to store the locations of our game. Each 
+ * location has the option to store an ArrayList of objects.
  * @author Helen Amaro and Sarah Shapard
  *
  */
@@ -11,26 +12,30 @@ public class Location {
 	private String name;
 	private String description;
 
-	ArrayList<Item> array1 = new ArrayList<Item>();
+	ArrayList<Item> arrayItems = new ArrayList<Item>();
+	int itemCount = 0;
 	
+	/**
+	 * This constructor is used to construct a new location with no name or description.
+	 */
 	public Location()
 	{
 		name = "";
 		description = "";
 	}
 	
+	/**
+	 * This constructor is used to construct a new location with a given name
+	 * and description.
+	 * @param name The name of the location.
+	 * @param description The description of the location.
+	 */
 	public Location(String name, String description)
 	{
 		this.name = name;
 		this.description = description;
 	}
 	
-	public Location(String name, String description, Item obj)
-	{
-		this.name = name;
-		this.description = description;
-		array1.add(obj);
-	}
 	
 	public String getName()
 	{
@@ -54,15 +59,47 @@ public class Location {
 	
 	public void addItem(Item obj)
 	{
-		array1.add(obj);
+		arrayItems.add(obj);
+		itemCount++;
 	}
 	
-	public void itemPresent(Item obj)
+	public boolean itemPresent(String itemName)
 	{
-		for(Item temp : array1)
+		for (Item temp: arrayItems)
 		{
-			
+			if(temp.getName().equals(itemName))
+			{
+				return true;
+			}
 		}
+		
+		return false;
 	}
 	
+	public Item itemReturn(String itemName)
+	{
+		for (Item temp: arrayItems)
+		{
+			if(temp.getName().equals(itemName))
+			{
+				return temp;
+			}
+		}
+		
+		Item noItem = null;
+		return noItem;
+	}
+	
+	public int numItems()
+	{
+		return itemCount;
+	}
+	
+	public Item itemRemove(String itemName)
+	{
+		Item temp = itemReturn(itemName);
+		arrayItems.remove(temp);
+		itemCount--;
+		return temp;
+	}
 }
